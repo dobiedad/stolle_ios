@@ -18,6 +18,7 @@
     [self requestStolleUrl];
     self.stolleWebView.delegate = self;
     [[UITabBar appearance] setSelectedImageTintColor:[UIColor grayColor]];
+    stolleWebView.scrollView.showsVerticalScrollIndicator = NO;
 }
 
 
