@@ -16,6 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8I9-bA-o9F" userLabel="StolleWebView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nry-Oo-HNh"/>
+                                </connections>
+                            </webView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXn-cV-VDm" userLabel="loadingView">
                                 <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <subviews>
@@ -26,13 +33,6 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.13711332070707072" green="0.069629740521097494" blue="0.059954220235135539" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8I9-bA-o9F" userLabel="StolleWebView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nry-Oo-HNh"/>
-                                </connections>
-                            </webView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfM-Fm-R66">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <color key="barTintColor" red="0.30328677399999998" green="0.1296684642" blue="0.095971324890000001" alpha="0.96999999999999997" colorSpace="calibratedRGB"/>
@@ -46,7 +46,6 @@
                                 <items>
                                     <tabBarItem title="Home" image="home.png" id="j3Z-OP-hf2"/>
                                     <tabBarItem title="Menu" image="menu.png" id="doR-Uf-2LW"/>
-                                    <tabBarItem title="Reviews" image="star.png" id="mzg-su-RAm"/>
                                     <tabBarItem title="Bookings" image="book.png" id="vC2-GL-fIB"/>
                                     <tabBarItem title="Contact" image="contact.png" id="edN-PM-qbS"/>
                                 </items>
@@ -166,6 +165,5 @@
         <image name="home.png" width="30" height="30"/>
         <image name="logo.png" width="240" height="72"/>
         <image name="menu.png" width="32" height="20"/>
-        <image name="star.png" width="32" height="32"/>
     </resources>
 </document>

@@ -17,7 +17,6 @@
     [self reachability];
     [self requestStolleUrl];
     self.Stolle.delegate = self;
-    [Stolle setHidden:true];
     
 }
 
@@ -26,31 +25,27 @@
 
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
-//    [labelLoading setHidden:NO];
-//    loadingImage.hidden = NO;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-//    [labelLoading setHidden:YES];
-//    loadingImage.hidden = YES;
     [Stolle stringByEvaluatingJavaScriptFromString:@"$('#tabs').addClass('hidden')"];
     [Stolle stringByEvaluatingJavaScriptFromString:@"$('#header').addClass('hidden')"];
     [self loadedContent];
 
 }
 -(void)loadedContent{
-    [UIView transitionWithView:Stolle
+    [UIView transitionWithView:loadingView
                       duration:.25
-                       options:UIViewAnimationOptionTransitionCurlDown
+                       options:UIViewAnimationOptionTransitionCrossDissolve
                     animations:NULL
                     completion:^(BOOL finished) {
-                        Stolle.hidden=false;
+                        loadingView.hidden=true;
                     }];
     
 
 }
 - (void)requestStolleUrl {
-    NSString *stolleURL = @"http://localhost:3000/?app";
+    NSString *stolleURL = @"http://www.stolle.xyz/?app";
     NSURL *url = [NSURL URLWithString:stolleURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [Stolle loadRequest:requestObj];
@@ -82,9 +77,6 @@
     }
     if([item.title isEqualToString:@"Menu"]) {
         [Stolle stringByEvaluatingJavaScriptFromString:@"$('#menu-button').click();"];
-    }
-    if([item.title isEqualToString:@"Reviews"]) {
-        [Stolle stringByEvaluatingJavaScriptFromString:@"$('#reviews-button').click();"];
     }
     if([item.title isEqualToString:@"Bookings"]) {
         [Stolle stringByEvaluatingJavaScriptFromString:@"$('#booking-button').click();"];
