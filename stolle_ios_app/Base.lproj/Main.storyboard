@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--HomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -35,7 +35,7 @@
                             </view>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfM-Fm-R66">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <color key="barTintColor" red="0.30328677399999998" green="0.1296684642" blue="0.095971324890000001" alpha="0.96999999999999997" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.21517913507070707" green="0.15427452363601812" blue="0.15028184093375563" alpha="0.95000000000000007" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Title" id="qwC-S9-MIB"/>
                                 </items>
@@ -49,8 +49,8 @@
                                     <tabBarItem title="Bookings" image="book.png" id="vC2-GL-fIB"/>
                                     <tabBarItem title="Contact" image="contact.png" id="edN-PM-qbS"/>
                                 </items>
-                                <color key="barTintColor" red="0.30328677399999998" green="0.1296684642" blue="0.095971324890000001" alpha="0.96999999999999997" colorSpace="calibratedRGB"/>
-                                <color key="selectedImageTintColor" red="0.30710563614575775" green="0.73398042929292928" blue="0.23194443107552468" alpha="0.79000000000000004" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="barTintColor" red="0.2151791351" green="0.15427452359999999" blue="0.15028184089999999" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Lk8-Vo-59d"/>
                                 </connections>
@@ -94,9 +94,9 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="Stolle" destination="8I9-bA-o9F" id="33D-HA-Zcy"/>
                         <outlet property="loadingView" destination="BXn-cV-VDm" id="yf9-nz-twU"/>
                         <outlet property="logo" destination="wsC-eB-Yxa" id="vUb-aP-ug9"/>
+                        <outlet property="stolleWebView" destination="8I9-bA-o9F" id="IDN-Yf-ujA"/>
                         <outlet property="superView" destination="8bC-Xf-vdC" id="nNJ-Ae-iVJ"/>
                         <outlet property="tabbar" destination="hsc-ht-AlV" id="3mi-nc-MWq"/>
                     </connections>
@@ -156,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1MK-t6-Fdd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-101.5" y="162.5"/>
+            <point key="canvasLocation" x="-606.5" y="-121.5"/>
         </scene>
     </scenes>
     <resources>

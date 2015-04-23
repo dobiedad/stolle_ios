@@ -1,14 +1,14 @@
 
-#import "ViewController.h"
+#import "HomeVC.h"
 #import "Reachability.h"
 
 
-@interface ViewController ()
+@interface HomeVC ()
 
 @end
 
-@implementation ViewController
-@synthesize Stolle;
+@implementation HomeVC
+@synthesize stolleWebView;
 @synthesize loadingView;
 @synthesize superView;
 - (void)viewDidLoad {
@@ -16,8 +16,8 @@
     [super viewDidLoad];
     [self reachability];
     [self requestStolleUrl];
-    self.Stolle.delegate = self;
-    
+    self.stolleWebView.delegate = self;
+    [[UITabBar appearance] setSelectedImageTintColor:[UIColor grayColor]];
 }
 
 
@@ -28,9 +28,14 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    [Stolle stringByEvaluatingJavaScriptFromString:@"$('#tabs').addClass('hidden')"];
-    [Stolle stringByEvaluatingJavaScriptFromString:@"$('#header').addClass('hidden')"];
+    [stolleWebView stringByEvaluatingJavaScriptFromString:@"$('#tabs').addClass('hidden')"];
+    [stolleWebView stringByEvaluatingJavaScriptFromString:@"$('#header').addClass('hidden')"];
+    [stolleWebView stringByEvaluatingJavaScriptFromString:@"$('#reviews').addClass('hidden')"];
+    [stolleWebView stringByEvaluatingJavaScriptFromString:@"document.documentElement.style.webkitUserSelect='none';"];
+    [stolleWebView stringByEvaluatingJavaScriptFromString:@"document.documentElement.style.webkitTouchCallout='none';"];
     [self loadedContent];
+
+
 
 }
 -(void)loadedContent{
@@ -48,10 +53,10 @@
     NSString *stolleURL = @"http://www.stolle.xyz/?app";
     NSURL *url = [NSURL URLWithString:stolleURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    [Stolle loadRequest:requestObj];
-    Stolle.scrollView.bounces = NO;
-    Stolle.scrollView.decelerationRate = UIScrollViewDecelerationRateNormal;
-    [Stolle setNeedsDisplay];
+    [stolleWebView loadRequest:requestObj];
+    stolleWebView.scrollView.bounces = NO;
+    stolleWebView.scrollView.decelerationRate = UIScrollViewDecelerationRateNormal;
+    [stolleWebView setNeedsDisplay];
 
 }
 - (IBAction)logoClicked:(id)sender {
@@ -73,16 +78,16 @@
 {
     NSLog(item.title);
     if([item.title isEqualToString:@"Home"]) {
-    [Stolle stringByEvaluatingJavaScriptFromString:@"$('#home-button').click();"];
+    [stolleWebView stringByEvaluatingJavaScriptFromString:@"$('#home-button').click();"];
     }
     if([item.title isEqualToString:@"Menu"]) {
-        [Stolle stringByEvaluatingJavaScriptFromString:@"$('#menu-button').click();"];
+        [stolleWebView stringByEvaluatingJavaScriptFromString:@"$('#menu-button').click();"];
     }
     if([item.title isEqualToString:@"Bookings"]) {
-        [Stolle stringByEvaluatingJavaScriptFromString:@"$('#booking-button').click();"];
+        [stolleWebView stringByEvaluatingJavaScriptFromString:@"$('#booking-button').click();"];
     }
     if([item.title isEqualToString:@"Contact"]) {
-        [Stolle stringByEvaluatingJavaScriptFromString:@"$('#contact-button').click();"];
+        [stolleWebView stringByEvaluatingJavaScriptFromString:@"$('#contact-button').click();"];
     }
    
 }

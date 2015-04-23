@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <UITabBarDelegate, UIWebViewDelegate>
-@property (weak, nonatomic) IBOutlet UIWebView *Stolle;
+@interface HomeVC : UIViewController <UITabBarDelegate, UIWebViewDelegate>
+@property (weak, nonatomic) IBOutlet UIWebView *stolleWebView;
 @property (weak, nonatomic) IBOutlet UITabBar *tabbar;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navbar;
 @property (weak, nonatomic) IBOutlet UIView *loadingView;
