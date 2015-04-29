@@ -14,14 +14,23 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+ 
+    [[UITabBar appearance] setSelectedImageTintColor:[UIColor grayColor]];
+    stolleWebView.scrollView.showsVerticalScrollIndicator = NO;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillEnterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
+}
+
+- (void)setupWebView {
+    loadingView.hidden=false;
+
     [self reachability];
     [self requestStolleUrl];
     self.stolleWebView.delegate = self;
-    [[UITabBar appearance] setSelectedImageTintColor:[UIColor grayColor]];
-    stolleWebView.scrollView.showsVerticalScrollIndicator = NO;
 }
 
-
+-(void)viewDidAppear:(BOOL)animated{
+}
 
 
 
@@ -111,9 +120,13 @@
     [reach startNotifier];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
+- (void)appDidBecomeActive:(NSNotification *)notification {
+    [self setupWebView];
 }
+
+- (void)appWillEnterForeground:(NSNotification *)notification {
+    NSLog(@"will enter foreground notification");
+}
+
 
 @end
