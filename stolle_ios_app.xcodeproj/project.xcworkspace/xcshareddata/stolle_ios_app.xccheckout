@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A25FB9A3-991C-4F3B-BEEE-9FB938095D1C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>stolle_ios_app</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F571F1F7FE9E426BD321BBC81243A0090BCCF76A</key>
+		<string>github.com:leomdivani/web_app.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>stolle_ios_app/stolle_ios_app.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F571F1F7FE9E426BD321BBC81243A0090BCCF76A</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:leomdivani/web_app.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F571F1F7FE9E426BD321BBC81243A0090BCCF76A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F571F1F7FE9E426BD321BBC81243A0090BCCF76A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>stolle</string>
+		</dict>
+	</array>
+</dict>
+</plist>
